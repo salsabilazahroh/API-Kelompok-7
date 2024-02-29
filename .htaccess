@@ -1,0 +1,6 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^products/?$ products.php [NC,L]
+RewriteRule ^products/([0-9]+)/?$ products.php?id=$1 [NC,L]
+RewriteRule ^POST/?$ index.php?method=POST [NC,L]
+RewriteRule ^PUT/?$ index.php?method=PUT [NC,L]
+RewriteRule ^DELETE/?$ index.php?method=DELETE [NC,L]
