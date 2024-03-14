@@ -1,0 +1,251 @@
+openapi: 3.0.2
+info:
+  title: Buku API
+  version: "1.0"
+servers:
+  - url: http://localhost/restapi/
+paths:
+  /products:
+    get:
+      summary: Mengambil semua data buku
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id_product:
+                      type: integer
+                      description: ID Produk
+                    product_name:
+                      type: string
+                      description: Nama Produk
+                    price:
+                      type: integer
+                      description: Harga Produk
+                    product_desc:
+                      type: string
+                      description: Deskripsi Produk
+                    jml_produk:
+                      type: integer
+                      description: Jumlah Produk
+                    created:
+                      type: string
+                      description: Tanggal Dibuat
+                    jml_halaman:
+                      type: integer
+                      description: Jumlah Halaman
+                    tgl_terbit:
+                      type: string
+                      description: Tanggal Terbit
+                    isbn:
+                      type: string
+                      description: ISBN
+                    bahasa:
+                      type: string
+                      description: Bahasa
+                    penerbit:
+                      type: string
+                      description: Penerbit
+                    berat:
+                      type: string
+                      description: Berat
+                    lebar:
+                      type: string
+                      description: Lebar
+                    panjang:
+                      type: string
+                      description: Panjang
+      tags:
+        - Buku
+      operationId: getProducts
+      parameters: []
+    post:
+      summary: Menambahkan data buku
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_name:
+                  type: string
+                  description: Nama Produk
+                price:
+                  type: integer
+                  description: Harga Produk
+                product_desc:
+                  type: string
+                  description: Deskripsi Produk
+                jml_produk:
+                  type: integer
+                  description: Jumlah Produk
+                jml_halaman:
+                  type: integer
+                  description: Jumlah Halaman
+                tgl_terbit:
+                  type: string
+                  description: Tanggal Terbit
+                isbn:
+                  type: string
+                  description: ISBN
+                bahasa:
+                  type: string
+                  description: Bahasa
+                penerbit:
+                  type: string
+                  description: Penerbit
+                berat:
+                  type: string
+                  description: Berat
+                lebar:
+                  type: string
+                  description: Lebar
+                panjang:
+                  type: string
+                  description: Panjang
+      responses:
+        "200":
+          description: OK
+      tags:
+        - Buku
+      operationId: addProduct
+  /products/{id}:
+    get:
+      summary: Mengambil data buku
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id_product:
+                    type: integer
+                    description: ID Produk
+                  product_name:
+                    type: string
+                    description: Nama Produk
+                  price:
+                    type: integer
+                    description: Harga Produk
+                  product_desc:
+                    type: string
+                    description: Deskripsi Produk
+                  jml_produk:
+                    type: integer
+                    description: Jumlah Produk
+                  created:
+                    type: string
+                    description: Tanggal Dibuat
+                  jml_halaman:
+                    type: integer
+                    description: Jumlah Halaman
+                  tgl_terbit:
+                    type: string
+                    description: Tanggal Terbit
+                  isbn:
+                    type: string
+                    description: ISBN
+                  bahasa:
+                    type: string
+                    description: Bahasa
+                  penerbit:
+                    type: string
+                    description: Penerbit
+                  berat:
+                    type: string
+                    description: Berat
+                  lebar:
+                    type: string
+                    description: Lebar
+                  panjang:
+                    type: string
+                    description: Panjang
+      tags:
+        - Buku
+      operationId: getProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+    put:
+      summary: Mengupdate data buku
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_name:
+                  type: string
+                  description: Nama Produk
+                price:
+                  type: integer
+                  description: Harga Produk
+                product_desc:
+                  type: string
+                  description: Deskripsi Produk
+                jml_produk:
+                  type: integer
+                  description: Jumlah Produk
+                created:
+                  type: string
+                  description: Tanggal Dibuat
+                jml_halaman:
+                  type: integer
+                  description: Jumlah Halaman
+                tgl_terbit:
+                  type: string
+                  description: Tanggal Terbit
+                isbn:
+                  type: string
+                  description: ISBN
+                bahasa:
+                  type: string
+                  description: Bahasa
+                penerbit:
+                  type: string
+                  description: Penerbit
+                berat:
+                  type: string
+                  description: Berat
+                lebar:
+                  type: string
+                  description: Lebar
+                panjang:
+                  type: string
+                  description: Panjang
+      responses:
+        "200":
+          description: OK
+      tags:
+        - Buku
+      operationId: updateProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+    delete:
+      summary: Menghapus data buku
+      responses:
+        "200":
+          description: OK
+      tags:
+        - Buku
+      operationId: deleteProduct
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
