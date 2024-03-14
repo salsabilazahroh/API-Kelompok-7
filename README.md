@@ -9,7 +9,7 @@ Annisa Nabila Rafi'ah
 (22091397101) :
 https://github.com/annisaaaaaaaaaaaaaaa/API-kelompok-7-
 
-Rosyida Aulia Salsabila 
+Rosyida Auliya Salsabila 
 (22091397104) :
 https://github.com/Rosyidaauliyas/API-KELOMPOK-7
 
